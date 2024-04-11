@@ -1,9 +1,6 @@
 
 from menu.menu import menu, sub_menu_cadastro
-from objetos.funcionario import consulta_funcionario
-from objetos.assalariado import opc_assalariado
-from objetos.horista import opc_horista
-from objetos.comissao import opc_comissao
+from menu.view import salario, opc_assalariado, opc_horista, opc_comissao
 
 def main():
     while True:
@@ -21,7 +18,7 @@ def main():
                 break
 
         if opc == 2: 
-            consulta_funcionario()
+            salario()
 
         if opc == 3:
             break

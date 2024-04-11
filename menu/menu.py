@@ -1,5 +1,5 @@
 def menu():
-    print(f'\n Selecione qual a categoria de funcionário você deseja acessar')
+    print(f'\n Selecione uma das opções abaixo: ')
 
     while True:
         print(f'\n Opção 1: Cadastrar novo funcionário')
@@ -9,7 +9,7 @@ def menu():
 
         if opc.isdigit():
                     opc = int(opc)
-                    if opc > 0 and opc < 4:
+                    if opc > 0 and opc < 4: 
                         return opc
                     
         print(f'\n Digite um valor válido')

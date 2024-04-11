@@ -1,25 +1,17 @@
-from objetos.funcionario import Funcionario, lista_funcionarios
+from objetos.funcionario import Funcionario
 
 class Comissao(Funcionario):
-    def __init__(self, nome, salario_base, porcentagem_comissao, valor_vendas):
+    def __init__(self, nome, salario_base, porcentagem_comissao):
         super().__init__(nome, salario_base)
         # self.nome = nome
         # self.codigo = codigo_funcionario + 1
         # self.salario_base = salario_base
         # codigo_funcionario = codigo_funcionario + 1
-        self.porcentagem_comissao = float(porcentagem_comissao)
-        self.valor_vendas = float(valor_vendas)
+        self.porcentagem_comissao = porcentagem_comissao
 
-    def calcular_salario(self):
-        salario = self.salario_base + ((self.valor_vendas / 100 )* self.porcentagem_comissao)
-        return self.str_salario(salario) 
+    def calcular_salario(self, valor_vendas):
+        salario = self.salario_base + ((valor_vendas / 100 )* self.porcentagem_comissao)
+        return f'\n O salário do(a) funcionário(a) {self.nome} é de: R${round(salario, 2)}'
+
     
-def opc_comissao():
-    nome = input('\n Digite o nome do funcionário: ')
-    salario_base = input('\n Digite o salário base do funcionário: ')
-    porcentagem_comissao = input('\n Insira a porcentagem de comissão: ')
-    valor_vendas = input('\n Insira o valor total das vendas realizadas: ')
-    funcionario = Comissao(nome, salario_base, porcentagem_comissao, valor_vendas)
-    lista_funcionarios.append(funcionario)
-    print('Funcionário cadastrado com sucesso!')
-    print(funcionario)
+
